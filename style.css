@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section#color-palette{
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+
+    max-width: 50%;
+
+    margin: 2rem auto;
+    padding: 2px;
+}
+
+.color {
+    min-width: 100px;
+    height: 100px; 
+
+    margin: 8px;
+    border: 1px solid black;
+
+}
+
+
+.backgroundBack {
+    background-color: rgb(0, 0, 0);
+}
+
+.backgroundBlueviolet {
+    background-color: blueviolet;
+}
+
+.backgroundFirebrick {
+    background-color: firebrick;
+}
+
+
+.backgroundAqua {
+    background-color: aqua;
+}

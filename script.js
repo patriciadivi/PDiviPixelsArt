@@ -39,5 +39,17 @@ function pixelBoardCreateLines(heigth, width) {
     }
 }
 
-pixelBoardCreateLines(5, 5);
+// 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+function chooseColor(event){
+    // console.log("ENTREI");
+    let element = event.target
+    let classSelected = document.querySelector(".selected")
 
+    if (element !== classSelected) {
+        classSelected.classList.remove("selected")
+        element.classList.add("selected")
+    }
+}
+
+pixelBoardCreateLines(5, 5);
+paletteColors.addEventListener("click", chooseColor)

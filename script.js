@@ -1,6 +1,7 @@
 // VARIAVEIS GLOBAIS
 const paletteColors = document.querySelector("#color-palette")
 const pixelBoard = document.querySelector("#pixel-board");
+let selectedColor = 'black'
 
 //-----------------------------------------------------
 //1- Adicione à página o título "Paleta de Cores".
@@ -41,7 +42,6 @@ function pixelBoardCreateLines(heigth, width) {
 
 // 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
 function chooseColor(event){
-    // console.log("ENTREI");
     let element = event.target
     let classSelected = document.querySelector(".selected")
 
@@ -49,7 +49,27 @@ function chooseColor(event){
         classSelected.classList.remove("selected")
         element.classList.add("selected")
     }
+
+    selectedColor = element.id
+    console.log(element.id);
+
+}
+
+function colorPixel(event){
+    let element = event.target
+    let colorNow = element.style.backgroundColor
+    if (element.className === "pixel") {
+        if (colorNow === selectedColor) {
+            element.style.backgroundColor = "white"
+                
+        } else {
+            element.style.backgroundColor = selectedColor
+        }
+        
+    }
+
 }
 
 pixelBoardCreateLines(5, 5);
 paletteColors.addEventListener("click", chooseColor)
+pixelBoard.addEventListener("click", colorPixel )
